@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week  9 - SVG</title>
+  <link  rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+   <div class="container">
+
+    <h1>SVG- Scalable vector Graphic</h1>
+
+    <!-- adding .svg file to the file-->
+    <img src="images/dice.svg" alt="dice with one face">
+
+    <!-- Embeding  SVG code -->
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <rect x="0" y="0" width="200" height="200" fill="#4dde01" rx="8" ry="8" />
+      <circle cx="100" cy="100" r="25" fill="#df500"  />
+    </svg>
+
+
+    <!-- g and use tag-->
+    <svg width="200" height="200" viewBox="0 0 200 200" class="dice4">
+      <rect x="0" y="0" width="200" height="200" fill="#4dde01" rx="8" ry="8" />
+      <g>
+        <circle cx="50" cy="50" r="25" fill="#d5000" id="dot" />
+        <use xlink:href="#dot"  x="100"></use>
+        <use xlink:href="#dot"  y="100"></use>
+        <use xlink:href="#dot"  x="100" y="100"></use>
+      </g>
+    </svg>
+
+    <!-- pattern in SVG-->
+    <svg width="320" height="200" vewBox="0 0 320 200">
+      <defs>
+        <pattern width="20" height="20" style="padding:5px;" id="dice" patternUnits="userSpaceOnUse">
+          <image width="20" heigth="20" xlink:href="images/dice.svg" />
+        </pattern>
+      </defs>
+
+      <!--<rect width="100" height="120" fill="url(#dice)" />!-->
+      <text x="0" y="50" fill="url(#dice)" style="font-size: 4rem">Hello World!</text>;
+    </svg>
+
+
+    <svg id="smily" width="487" height="484" class="smiley">
+      <g id="face">
+        <circle class="cls-1" cx="241" cy="243" r="234" />
+      </g>
+      <path id="mouth" class="cls-2" d="M100,292H381.79s-18,78-140.9,78S100,292,100,292Z" />
+      <ellipse id="eye-l" class="cls-2" cx="141.5" cy="154" rx="37.5" ry="65" />
+      <ellipse id="eye-r" class="cls-2" cx="342.5" cy="154" rx="37.5" ry="65" />
+      <circle class="pupil" id="pupil-l" cx="137.5" cy="182.5" r="24.5" />
+      <circle class="pupil" id="pupil-r" cx="337.5" cy="182.5" r="24.5" />
+      <path id="eyelash-l" class="cls-3" d="M179,154c-37,2-37,0-75,0,0-35.9,16.79-65,37.5-65S179,118.1,179,154Z" />
+      <path id="eyelash-r" class="cls-3" d="M380,154c-37,2-37,0-75,0,0-35.9,16.79-65,37.5-65S380,118.1,380,154Z" />
+    </svg>
+   
+
+
+   </div><!-- closes .container !-->
+
+</body>
+</html>
